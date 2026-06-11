@@ -1,0 +1,17 @@
+import { NavLink } from 'react-router-dom'
+
+function NotFoundPage() {
+  return (
+    <div className="grid min-h-[60vh] place-items-center px-4 text-center">
+      <div>
+        <h1 className="text-3xl font-bold text-slate-900">Page not found</h1>
+        <p className="mt-2 text-slate-600">The requested route is unavailable.</p>
+        <NavLink to="/" className="mt-4 inline-block rounded-xl bg-[#0B4F9F] px-4 py-2 text-sm font-semibold text-white">
+          Return Home
+        </NavLink>
+      </div>
+    </div>
+  )
+}
+
+export default NotFoundPage
