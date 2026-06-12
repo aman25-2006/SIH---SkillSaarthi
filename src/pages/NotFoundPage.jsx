@@ -6,8 +6,11 @@ function NotFoundPage() {
   const { setTheme } = useTheme()
 
   const handleReturnHome = () => {
+    window.localStorage.setItem('skillsaarthi-theme', 'light')
+    document.documentElement.classList.remove('dark')
+    document.documentElement.dataset.theme = 'light'
     setTheme('light')
-    navigate('/')
+    navigate('/', { replace: true })
   }
 
   return (
