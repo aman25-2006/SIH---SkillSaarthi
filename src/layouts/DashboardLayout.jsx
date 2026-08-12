@@ -38,7 +38,7 @@ function DashboardLayout() {
           <nav className="mt-4 flex flex-col gap-1 text-sm">
             {studentNav.map((link) => (
               <NavLink
-                key={link.path}
+                key={`${link.path}-${link.label}`}
                 to={link.path}
                 className={({ isActive }) =>
                   `rounded-xl px-3 py-2 transition ${
