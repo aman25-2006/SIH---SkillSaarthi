@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import LoadingScreen from './components/LoadingScreen'
+import { SaarthiProvider } from './context/SaarthiContext'
 import { ThemeProvider } from './context/ThemeContext'
 import DashboardLayout from './layouts/DashboardLayout'
 import PublicLayout from './layouts/PublicLayout'
@@ -30,34 +31,37 @@ function App() {
 
   return (
     <ThemeProvider>
-      {loading ? (
-        <LoadingScreen />
-      ) : (
-      <Routes>
-        <Route element={<PublicLayout />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/how-it-works" element={<HowItWorksPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-        </Route>
+      <SaarthiProvider>
+        {loading ? (
+          <LoadingScreen />
+        ) : (
+          <Routes>
+            <Route element={<PublicLayout />}>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/how-it-works" element={<HowItWorksPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
+            </Route>
 
-        <Route element={<DashboardLayout />}>
-          <Route path="/student/dashboard" element={<DashboardHomePage />} />
-          <Route path="/student/assessment" element={<AssessmentPage />} />
-          <Route path="/student/skill-gap" element={<SkillGapPage />} />
-          <Route path="/student/mentor" element={<MentorPage />} />
-          <Route path="/student/roadmap" element={<RoadmapPage />} />
-          <Route path="/student/internships" element={<InternshipsPage />} />
-          <Route path="/student/resume" element={<ResumeBuilderPage />} />
-          <Route path="/college/dashboard" element={<CollegeDashboardPage />} />
-          <Route path="/settings" element={<SettingsPage />} />
-        </Route>
+            <Route element={<DashboardLayout />}>
+              <Route path="/student/dashboard" element={<DashboardHomePage />} />
+              <Route path="/student/assessment" element={<AssessmentPage />} />
+              <Route path="/student/skill-gap" element={<SkillGapPage />} />
+              <Route path="/student/mentor" element={<MentorPage />} />
+              <Route path="/student/roadmap" element={<RoadmapPage />} />
+              <Route path="/student/internships" element={<InternshipsPage />} />
+              <Route path="/student/resume" element={<ResumeBuilderPage />} />
+              <Route path="/college/dashboard" element={<CollegeDashboardPage />} />
+              <Route path="/settings" element={<SettingsPage />} />
+            </Route>
 
-        <Route path="/home" element={<Navigate to="/" replace />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-      )}
+            <Route path="/home" element={<Navigate to="/" replace />} />
+            <Route path="/demo" element={<Navigate to="/student/dashboard" replace />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        )}
+      </SaarthiProvider>
     </ThemeProvider>
   )
 }

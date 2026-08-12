@@ -16,8 +16,8 @@ function NotFoundPage() {
   return (
     <div className="grid min-h-[60vh] place-items-center px-4 text-center">
       <div>
-        <h1 className="text-3xl font-bold text-slate-900">Page not found</h1>
-        <p className="mt-2 text-slate-600">The requested route is unavailable.</p>
+        <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-50">Page not found</h1>
+        <p className="mt-2 text-slate-600 dark:text-slate-300">The requested route is unavailable.</p>
         <button
           type="button"
           onClick={handleReturnHome}

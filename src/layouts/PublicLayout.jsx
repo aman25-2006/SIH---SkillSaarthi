@@ -8,11 +8,11 @@ function PublicLayout() {
   const { isDark, toggleTheme } = useTheme()
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_10%_10%,#dbeafe_0%,#f8fafc_32%,#eef2ff_100%)] text-slate-900 dark:bg-[radial-gradient(circle_at_10%_10%,#0f172a_0%,#020617_42%,#0b1120_100%)] dark:text-slate-50">
-      <header className="sticky top-0 z-30 border-b border-white/60 bg-white/85 backdrop-blur dark:border-slate-800 dark:bg-slate-950/80">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,#e0f2fe_0%,#f8fafc_35%,#ecfeff_100%)] text-slate-900 dark:bg-[radial-gradient(circle_at_top_left,#0f172a_0%,#020617_48%,#111827_100%)] dark:text-slate-50">
+      <header className="sticky top-0 z-30 border-b border-white/70 bg-white/80 backdrop-blur dark:border-slate-800 dark:bg-slate-950/80">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6">
           <NavLink to="/" className="text-lg font-bold tracking-tight text-[#0B4F9F] dark:text-[#7cc2ff]">
-            SkillSaarthi
+            Skill Saarthi
           </NavLink>
           <nav className="hidden items-center gap-5 text-sm md:flex">
             {navLinks.map((link) => (
@@ -42,26 +42,26 @@ function PublicLayout() {
               to="/student/dashboard"
               className="rounded-xl bg-[#0B4F9F] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#083d7b] dark:bg-[#FF9933] dark:text-slate-950 dark:hover:bg-[#f08f1f]"
             >
-              Student Dashboard
+              Open Demo
             </NavLink>
           </div>
         </div>
       </header>
       <Outlet />
-      <footer className="mt-20 border-t border-white/60 bg-white/85 dark:border-slate-800 dark:bg-slate-950/80">
+      <footer className="mt-20 border-t border-white/70 bg-white/80 dark:border-slate-800 dark:bg-slate-950/80">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 md:grid-cols-3 md:px-6">
           <div>
-            <h4 className="font-semibold text-slate-900 dark:text-slate-50">National Employability Infrastructure</h4>
+            <h4 className="font-semibold text-slate-900 dark:text-slate-50">Skill Saarthi</h4>
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-              Trusted guidance for rural and underserved India, designed with Digital Public Infrastructure standards.
+              Personalized career navigation for learners who need direction, not another generic course catalog.
             </p>
           </div>
           <div>
             <h4 className="font-semibold text-slate-900 dark:text-slate-50">Quick Links</h4>
             <div className="mt-2 flex flex-col gap-2 text-sm text-slate-600 dark:text-slate-300">
-              <NavLink to="/about">Mission</NavLink>
+              <NavLink to="/register">Start My Journey</NavLink>
               <NavLink to="/how-it-works">How It Works</NavLink>
-              <NavLink to="/login">Student Access</NavLink>
+              <NavLink to="/student/dashboard">Demo Dashboard</NavLink>
             </div>
           </div>
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>

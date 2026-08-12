@@ -2,15 +2,7 @@ import { motion } from 'framer-motion'
 import AnimatedPage from '../../components/AnimatedPage'
 import { pageItem } from '../../components/motion'
 import { SectionTitle } from '../../components/UI'
-
-const steps = [
-  'Student Registration',
-  'Skill Assessment',
-  'Skill Gap Report',
-  'AI Career Mentor',
-  'Internship Matching',
-  'Career Readiness',
-]
+import { publicJourney } from '../../data'
 
 function HowItWorksPage() {
   return (
@@ -21,7 +13,7 @@ function HowItWorksPage() {
         subtitle="A transparent and measurable journey with guided milestones."
       />
       <div className="relative space-y-4 border-l-2 border-[#0B4F9F]/30 pl-6">
-        {steps.map((step, index) => (
+        {publicJourney.map((step, index) => (
           <motion.div
             key={step}
             variants={pageItem}

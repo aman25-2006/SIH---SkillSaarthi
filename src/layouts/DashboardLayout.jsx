@@ -10,14 +10,14 @@ function DashboardLayout() {
   const { isDark, toggleTheme } = useTheme()
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50">
-      <header className="sticky top-0 z-30 border-b border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950/90">
+    <div className="min-h-screen bg-[linear-gradient(180deg,#f8fafc_0%,#eef6ff_100%)] text-slate-900 dark:bg-slate-950 dark:text-slate-50">
+      <header className="sticky top-0 z-30 border-b border-slate-200/80 bg-white/92 backdrop-blur dark:border-slate-800 dark:bg-slate-950/92">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6">
           <button className="md:hidden" onClick={() => setOpen((v) => !v)} aria-label="Toggle navigation">
             <Menu className="h-5 w-5 text-slate-700 dark:text-slate-200" />
           </button>
           <NavLink to="/" className="text-base font-bold text-[#0B4F9F] dark:text-[#7cc2ff]">
-            SkillSaarthi
+            Skill Saarthi
           </NavLink>
           <div className="flex items-center gap-2">
             <button
@@ -28,12 +28,12 @@ function DashboardLayout() {
             >
               {isDark ? <SunMedium className="h-4 w-4" /> : <MoonStar className="h-4 w-4" />}
             </button>
-            <div className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300">Live Mentoring</div>
+            <div className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300">Demo Mode</div>
           </div>
         </div>
       </header>
       <div className="mx-auto grid max-w-7xl gap-6 px-4 py-6 md:grid-cols-[240px_1fr] md:px-6">
-        <aside className={`${open ? 'block' : 'hidden'} rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900 md:block`}>
+        <aside className={`${open ? 'block' : 'hidden'} rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900 md:block`}>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">Student Suite</p>
           <nav className="mt-4 flex flex-col gap-1 text-sm">
             {studentNav.map((link) => (

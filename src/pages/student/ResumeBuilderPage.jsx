@@ -1,28 +1,37 @@
 import AnimatedPage from '../../components/AnimatedPage'
+import { GlassCard, SectionTitle } from '../../components/UI'
+import { useSaarthi } from '../../context/SaarthiContext'
 
 function ResumeBuilderPage() {
+  const { profile, analysis, resume } = useSaarthi()
+
   return (
     <AnimatedPage className="space-y-6">
-      <h1 className="text-2xl font-bold text-slate-900">ATS Resume Builder</h1>
-      <div className="grid gap-4 lg:grid-cols-2">
-        <div className="rounded-2xl border border-slate-200 bg-white p-5">
-          <h2 className="text-lg font-semibold text-slate-900">Resume Inputs</h2>
-          <div className="mt-3 space-y-2">
-            {['Personal Details', 'Skills', 'Education', 'Projects'].map((field) => (
-              <input key={field} placeholder={field} className="w-full rounded-xl border border-slate-300 px-3 py-2" />
+      <SectionTitle eyebrow="Resume + interview" title="Lightweight employability prep" subtitle="This page demonstrates resume readiness, suggestions, and mock interview prompts without building a full generator." />
+      <div className="grid gap-4 lg:grid-cols-[1fr_0.95fr]">
+        <GlassCard>
+          <p className="text-sm text-slate-500 dark:text-slate-400">Resume readiness</p>
+          <h2 className="mt-2 text-4xl font-bold text-slate-950 dark:text-white">{resume.readiness}%</h2>
+          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{resume.summary}</p>
+          <div className="mt-5 space-y-3">
+            {resume.suggestions.map((item) => (
+              <div key={item} className="rounded-2xl bg-slate-50 p-4 text-sm text-slate-700 dark:bg-slate-800/70 dark:text-slate-200">• {item}</div>
             ))}
           </div>
-          <button className="mt-4 rounded-xl bg-[#0B4F9F] px-4 py-2 text-sm font-semibold text-white">Generate Resume</button>
-        </div>
-        <div className="rounded-2xl border border-slate-200 bg-white p-5">
-          <h2 className="text-lg font-semibold text-slate-900">Live Preview</h2>
-          <div className="mt-3 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600">
-            <p className="font-semibold text-slate-900">Ravi Kumar</p>
-            <p>SQL, Excel, Communication</p>
-            <p className="mt-2">B.Tech - Mechanical Engineering</p>
-            <p className="mt-2">Project: Placement readiness dashboard with AI recommendations</p>
+        </GlassCard>
+
+        <GlassCard>
+          <p className="text-sm font-semibold text-slate-900 dark:text-slate-50">Interview prep</p>
+          <div className="mt-3 rounded-2xl bg-[#0B4F9F]/5 p-4 text-sm text-slate-700 dark:bg-[#0B4F9F]/15 dark:text-slate-200">
+            <p className="font-semibold text-slate-950 dark:text-white">Recommended project story</p>
+            <p className="mt-1">{analysis.goal} project: {profile.currentSkills[0]} + {analysis.topPrioritySkills[0]} + career-ready dashboard.</p>
           </div>
-        </div>
+          <div className="mt-4 space-y-3">
+            {resume.interviewQuestions.map((question) => (
+              <div key={question} className="rounded-2xl bg-slate-50 p-4 text-sm text-slate-700 dark:bg-slate-800/70 dark:text-slate-200">{question}</div>
+            ))}
+          </div>
+        </GlassCard>
       </div>
     </AnimatedPage>
   )

@@ -18,7 +18,7 @@ function LoadingScreen() {
         className="rounded-2xl border border-white/70 bg-white/80 px-10 py-8 text-center shadow-xl backdrop-blur dark:border-slate-700 dark:bg-slate-900/85"
       >
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0B4F9F] dark:text-[#FFB15E]">Launching platform</p>
-        <h2 className="mt-2 text-2xl font-bold text-slate-900 dark:text-slate-50">SkillSaarthi</h2>
+        <h2 className="mt-2 text-2xl font-bold text-slate-900 dark:text-slate-50">Skill Saarthi</h2>
         <div className="mt-4 h-1.5 w-56 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
           <motion.div
             className="h-full bg-[#0B4F9F] dark:bg-[#FF9933]"
