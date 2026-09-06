@@ -5,7 +5,7 @@ import { defineConfig, globalIgnores } from 'eslint/config'
 import tseslint from 'typescript-eslint'
 
 export default defineConfig([
-  globalIgnores(['dist', '.next', 'next-env.d.ts']),
+  globalIgnores(['dist', '.next', 'out', 'next-env.d.ts']),
   {
     files: ['**/*.{js,mjs,cjs,jsx,ts,tsx}'],
     languageOptions: {
