@@ -1,8 +1,11 @@
 'use client'
 
-import { Bell, ChevronDown } from 'lucide-react'
+import { Bell, ChevronDown, Moon, Sun } from 'lucide-react'
+import { useTheme } from '@/components/shared/theme-provider'
 
 export function TopHeader() {
+  const { theme, toggleTheme } = useTheme()
+
   return (
     <>
       {/* Government Info Bar */}
@@ -40,6 +43,15 @@ export function TopHeader() {
             <button className="relative p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
               <Bell className="h-5 w-5" />
               <span className="absolute top-1 right-1 h-2 w-2 bg-red-500 rounded-full"></span>
+            </button>
+
+            <button
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
+              title={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
+              className="rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100"
+            >
+              {theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
             </button>
 
             <button className="flex items-center gap-2 rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-100 transition-colors">

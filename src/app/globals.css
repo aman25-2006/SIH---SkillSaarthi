@@ -23,6 +23,28 @@
   --radius: 0.9rem;
 }
 
+.dark {
+  --background: oklch(0.145 0.018 252.5);
+  --foreground: oklch(0.96 0.006 247.858);
+  --card: oklch(0.19 0.02 252.5);
+  --card-foreground: oklch(0.96 0.006 247.858);
+  --popover: oklch(0.19 0.02 252.5);
+  --popover-foreground: oklch(0.96 0.006 247.858);
+  --primary: oklch(0.68 0.14 252.8);
+  --primary-foreground: oklch(0.15 0.02 252.5);
+  --secondary: oklch(0.25 0.025 253.3);
+  --secondary-foreground: oklch(0.92 0.01 253.3);
+  --muted: oklch(0.25 0.025 253.3);
+  --muted-foreground: oklch(0.72 0.018 253.3);
+  --accent: oklch(0.27 0.035 253.3);
+  --accent-foreground: oklch(0.96 0.006 247.858);
+  --destructive: oklch(0.65 0.19 27.325);
+  --destructive-foreground: oklch(0.98 0.003 247.858);
+  --border: oklch(0.3 0.025 248.4);
+  --input: oklch(0.3 0.025 248.4);
+  --ring: oklch(0.68 0.14 252.8);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -86,3 +108,21 @@ select {
   outline: 2px solid var(--ring);
   outline-offset: 2px;
 }
+
+.dark .bg-white { background-color: oklch(0.19 0.02 252.5); }
+.dark .bg-gray-50 { background-color: oklch(0.16 0.019 252.5); }
+.dark .bg-gray-100 { background-color: oklch(0.23 0.024 252.5); }
+.dark .bg-blue-50 { background-color: oklch(0.25 0.065 252.8); }
+.dark .bg-blue-100 { background-color: oklch(0.3 0.075 252.8); }
+.dark .bg-green-50 { background-color: oklch(0.23 0.045 150); }
+.dark .bg-amber-50 { background-color: oklch(0.25 0.055 75); }
+.dark .bg-orange-50 { background-color: oklch(0.25 0.055 55); }
+.dark .text-gray-900 { color: oklch(0.96 0.006 247.858); }
+.dark .text-gray-700 { color: oklch(0.84 0.012 247.858); }
+.dark .text-gray-600 { color: oklch(0.76 0.014 247.858); }
+.dark .text-gray-500 { color: oklch(0.67 0.016 247.858); }
+.dark .text-gray-400 { color: oklch(0.6 0.016 247.858); }
+.dark .border-gray-100 { border-color: oklch(0.25 0.022 248.4); }
+.dark .border-gray-200, .dark .border-gray-300 { border-color: oklch(0.3 0.025 248.4); }
+.dark input, .dark select, .dark textarea { background-color: oklch(0.18 0.02 252.5); color: var(--foreground); }
+.dark input::placeholder { color: oklch(0.58 0.014 247.858); }

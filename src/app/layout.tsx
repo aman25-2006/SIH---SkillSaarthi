@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 import { IBM_Plex_Sans } from 'next/font/google'
+import { ThemeProvider } from '@/components/shared/theme-provider'
 import './globals.css'
 
 const fontSans = IBM_Plex_Sans({
@@ -32,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${fontSans.variable} bg-background text-foreground antialiased`}>
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   )
